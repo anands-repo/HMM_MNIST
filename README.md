@@ -2,6 +2,8 @@
 
 MNIST digit recognition using an HMM ensemble and a Neural Network. The forward likelihood for a digit image is computed from an ensemble of HMMs. The forward log-likelihoods are then analyzed by an FC network to determine the label of the digit. The complete system is trained end-to-end using backpropagation.
 
+The basic inspiration for this work is the idea that the distance between a "representative" of a digit and any instance of any digit can indicate whether the instance is in the same category as the representative. This can be extended to thinking in terms of edit distance. From there, we can extend this to HMMs (pair-HMMs are used to make probabilistic edit-distance computations). Each HMM models columns in a digit using its states which emit multivariate Gaussian vectors. If an HMM is fit to a digit "8", say, then the expectation is that the states in the HMM will learn column vectors in their Gaussian means that represent the column-elements generally found in "8"s. This is generalized to use an ensemble of HMMs to determine forward likelihoods, and then process these likelihoods with a feed-forward neural network.
+
 1. Training the HMM_NN network:
 
 	```python run_script.py```
