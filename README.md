@@ -1,4 +1,4 @@
-#HMM MNIST
+# HMM MNIST
 
 MNIST digit recognition using an HMM ensemble and a Neural Network. The forward likelihood for a digit image is computed from an ensemble of HMMs. The forward log-likelihoods are then analyzed by an FC network to determine the label of the digit. The complete system is trained end-to-end using backpropagation.
 
