@@ -4,11 +4,12 @@ MNIST digit recognition using an HMM ensemble and a Neural Network. The forward 
 
 1. Training the HMM_NN network:
 
-	python run_script.py 
+	```python run_script.py```
 
 will provide options on how to run the script.
 
 An example run command is:
+
 	python run_script.py --alg forward --num_hmms 30 --num_states 14 --frac_vertical 0.50 --batch_size 100 --num_epochs 10
 
 This run saves the session in a file in the current path. The file may be later passed to tensorflow using the --init_file option. 
@@ -22,9 +23,11 @@ The init-file seems to be tensorflow version dependent. The version from which t
 2. Evaluating the HMM_NN
 
 For this, please run python run_script_eval.py. This script expects a saved tensorflow session to be provided as input. The command to be used is for example:
-	python run_script_eval.py --alg forward --num_hmms 30 --num_states 14 --frac_vertical 0.50 --batch_size 100 --num_epochs 0 --init_file ./Session_fourth_set14_30_forward_7-30
+
+	python run_script_eval.py --alg forward --num_hmms 30 --num_states 14 --frac_vertical 0.50 --batch_size 100 --num_epochs 0 --init_file ./<TF session file>
 
 3. Plotting the HMM state mean values
-	python plotHMMs.py --alg forward --num_hmms 30 --num_states 14 --frac_vertical 0.50 --batch_size 100 --num_epochs 0 --init_file ./Session_fourth_set14_30_forward_7-30
+
+	```python plotHMMs.py --alg forward --num_hmms 30 --num_states 14 --frac_vertical 0.50 --batch_size 100 --num_epochs 0 --init_file ./<TF session file>```
 
 
